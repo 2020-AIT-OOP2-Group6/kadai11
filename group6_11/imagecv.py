@@ -12,15 +12,15 @@ def facewaku(img1):
     img = cv2.imread(img1)
 
     #グレースケールに変換する
-    img_g = cv2.imread(img,cv2.COLOR_BGR2GRAY)
+    img_g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
  
     
     #rect = cascade.detectMultiScale(img_g)
     #if len(rect) > 0:
      #   for x, y, w, h in rect:
-      #      cv2.rectangle(img_g, (x, y), (x+w, y+h), color)
+      #      cv2.rectangle(img, (x, y), (x+w, y+h), color)
 
-    cv2.imshow('detected', img_g)
+    cv2.imshow('detected', img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
