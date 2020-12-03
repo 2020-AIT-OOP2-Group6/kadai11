@@ -1,3 +1,4 @@
+
 import cv2
 import numpy as np
 
@@ -15,11 +16,6 @@ def facewaku(img1):
 
     #grayscale
     img_g=cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
-
-
-
-
- 
     
     # rect = cascade.detectMultiScale(img)
     # if len(rect) > 0:
