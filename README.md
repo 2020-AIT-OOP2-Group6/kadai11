@@ -14,6 +14,6 @@
 
 | モジュール名           | version    | 
 | -------------- | ----------- | 
-| flask　     |       |
-| cv2　     |       |
-| watchdog     |       |
+| flask　     |  1.1.2  |
+| cv2　     |     |
+| watchdog     |  |
