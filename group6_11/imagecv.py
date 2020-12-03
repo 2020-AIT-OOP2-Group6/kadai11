@@ -34,7 +34,9 @@ def facewaku(img1):
         for rect in facerect:
             cv2.rectangle(img, tuple(rect[0:2]),tuple(rect[0:2]+rect[2:4]), color, thickness=2)
  
-    cv2.imwrite('group6_11/facewaku/result.jpg', img)
+    
+    cv2.imwrite('group6_11/facewaku/result', img)
+    
     #cv2.imwrite('result', img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
