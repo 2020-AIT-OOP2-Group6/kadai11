@@ -9,9 +9,12 @@ from werkzeug.utils import secure_filename
 from flask import send_from_directory
 
 app = Flask(__name__)
-app.config["JSON_AS_ASCII"] = False
 
 # http://127.0.0.1:5000/
 @app.route('/')
 def index():
     return render_template("index.html")
+
+if __name__ == "__main__":
+    #　完成したら"debug=True"を消す
+    app.run(debug=True)
