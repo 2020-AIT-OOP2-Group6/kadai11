@@ -10,4 +10,5 @@ def grayscale(self, img1):
 
 if __name__ == "__main__":
  #この辺にwatchdog
+ img1 = cv2.imread('google.png')
  grayscale(img1)
