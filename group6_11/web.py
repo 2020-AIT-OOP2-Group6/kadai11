@@ -1,11 +1,10 @@
 import os
 # request フォームから送信した情報を扱うためのモジュール
 # url_for アドレス遷移
-from flask import Flask, request, render_template, url_for
+from flask import Flask, request, render_template, send_from_directory
 # ファイル名をチェックする関数
 from werkzeug.utils import secure_filename
-# 画像のダウンロード
-from flask import send_from_directory
+import glob
 
 # 画像のアップロード先のディレクトリ
 UPLOAD_FOLDER = './uploads'
