@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ファイルアップロード</title>
-    <link rel="stylesheet" type="text/css" href=../static/index.css>
+    <link rel="stylesheet" type="text/css" href="../static/index.css" />
   </head>
   <body>
-    <p id="tabcontrol">
+    <p id="tabchenge">
       <a href="#tabpage1">Home</a>
       <a href="#tabpage2">アップロード</a>
       <a href="#tabpage3">グレイスケール</a>
@@ -15,13 +15,20 @@
     <div id="tabbody">
       <div id="tabpage1">
         <h1>ファイルアップロード</h1>
-        <p>
-          <input type="file" 　accept="image/*" />
-        </p>
-        <button type="submit" id="Image_Push">アップロード</button>
+        <p></p>
+        <form method="post" enctype="multipart/form-data" action="/send">
+          <input type="file" name="img_file" accept="image/*" />
+          <button type="submit" id="Image_Push">アップロード</button>
+        </form>
       </div>
-      <div id="tabpage2">アップロードされた画像が表示される</div>
+      <div id="tabpage2">
+        <h1>アップロード画像</h1>
+        {% if img_url %} {% for list in img_url %}
+        <p><img src="../uploads/{{list}}" width="200" height="200" /></p>
+        {% endfor %} {% endif %}
+      </div>
       <div id="tabpage3">グレースケール画像が表示される</div>
     </div>
+    <script src="../static/index.js"></script>
   </body>
 </html>
