@@ -34,7 +34,7 @@ def index():
 def upload():
     img_file = request.files['img_file']
     if img_file and allowed_file(img_file.filename):
-        filename = secure_filename(img_ile.filename)
+        filename = secure_filename(img_file.filename)
         img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         img_url = os.listdir("./uploads")
         return render_template('index.html', img_url=img_url)
