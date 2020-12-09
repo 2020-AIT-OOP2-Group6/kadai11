@@ -15,10 +15,13 @@
     <div id="tabbody">
       <div id="tabpage1">
         <h1>ファイルアップロード</h1>
-        <p>
-          <input type="file" 　accept="image/*" />
-        </p>
-        <button type="submit" id="Image_Push">アップロード</button>
+        <form enctype="multipart/form-data" action="/upload" method="post">
+          <p>
+            <input type="file" name="file" 　accept="image/*" />
+          </p>
+          <button type="submit" id="Image_Push">アップロード</button>
+        </form>
+        <h>{{　message }}</h>
       </div>
       <div id="tabpage2">アップロードされた画像が表示される</div>
       <div id="tabpage3">グレースケール画像が表示される</div>
