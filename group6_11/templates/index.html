@@ -27,7 +27,14 @@
         <p><img src="../uploads/{{list}}" width="200" height="200" /></p>
         {% endfor %} {% endif %}
       </div>
-      <div id="tabpage3">グレースケール画像が表示される</div>
+      <div id="tabpage3">
+        <h1>グレースケール画像</h1>
+        {% if grayscale_url %} {% for list in grayscale_url %}
+        <p>
+          <img src="../grayscale-image/{{list}}" width="200" height="200" />
+        </p>
+        {% endfor %} {% endif %}
+      </div>
     </div>
     <script src="../static/index.js"></script>
   </body>

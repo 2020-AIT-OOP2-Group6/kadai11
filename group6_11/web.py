@@ -11,10 +11,12 @@ from flask import send_from_directory, render_template
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'gif'])
 UPLOAD_FOLDER = './uploads'
+GRAYSCALE_FOLDER = './grayscale-image'
 
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['GRAYSCALE_FOLDER'] = GRAYSCALE_FOLDER
 
 
 def allowed_file(filename):
@@ -27,7 +29,8 @@ def allowed_file(filename):
 @app.route('/')
 def index():
     img_url = os.listdir("./uploads")
-    return render_template("index.html", img_url=img_url)
+    grayscale_url = os.listdir("./grayscale-image")
+    return render_template('index.html', img_url=img_url, grayscale_url=grayscale_url)
 
 
 @app.route('/send', methods=['POST'])
@@ -37,7 +40,8 @@ def upload():
         filename = secure_filename(img_file.filename)
         img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         img_url = os.listdir("./uploads")
-        return render_template('index.html', img_url=img_url)
+        grayscale_url = os.listdir("./grayscale-image")
+        return render_template('index.html', img_url=img_url, grayscale_url=grayscale_url)
     else:
         return ''' <p>許可されていない拡張子です</p> '''
 
